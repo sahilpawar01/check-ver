@@ -1,0 +1,46 @@
+<div class="example-container">
+  <mat-drawer-container class="full-height">
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <p>Auto-resizing sidenav</p>
+      @if (showFiller) {
+        <a href="https://www.google.com">Google</a>
+      }
+      <button (click)="showFiller = !showFiller" mat-raised-button>
+        <a href="https://www.google.com">Google</a>
+      </button>
+    </mat-drawer>
+
+    <mat-drawer-content>
+      <div class="example-sidenav-content">
+        <button type="button" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+
+      <mat-card class="example-result-card">
+        <mat-card-content>
+          <h2>Slider configuration</h2>
+
+          <mat-card class="example-result-card">
+            <mat-card-content>
+              <h2>Confidence level </h2>
+
+              <div class="example-label-container">
+                <label id="example-name-label" class="example-name-label">Value</label>
+                <label class="example-value-label">{{slider.value}}</label>
+              </div>
+              <mat-slider
+                class="example-margin"
+                [disabled]="disabled"
+                [max]="max"
+                [min]="min"
+                [step]="step"
+                [discrete]="thumbLabel"
+                [showTickMarks]="showTicks"
+              >
+                <input matSliderThumb [(ngModel)]="value" #slider />
+              </mat-slider>
+            </mat-card-content>
+          </mat-card>
+
+         
